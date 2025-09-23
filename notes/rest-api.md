@@ -61,12 +61,12 @@
 **1. All the APIs should be designed around resources.**
 
 - Resource is any kind of data, object, service or real life entity that a client can access.
-- For BookMyShow, movie, show, user, etc is a resource.
+- For BookMyShow, `movie`, `show`, `user`, etc is a resource.
 - Syntax: `IPAddress:PORT/ROUTES`
 - Example: `https://localhost:3000/movie/3`
 - Your route should be based on resources.
 - Example: `/products`, `/customers`, `/users`, `/orders`, `/categories`
-- In gRPC, the API should designed around action.
+- In gRPC, the API should be designed around action.
 - So, if movie is a resouce, booking a movie is an action.
 
 **2. Use JSON format to send and receive data.**
@@ -144,6 +144,27 @@
   3. Redirection messages (300 - 399)
   4. Client error responses (400 - 499)
   5. Server error responses (500 - 599)
+
+## URI vs URL vs URN
+
+- Lets understand these terms with reference to an E-Commerce project.
+
+| **Aspect**                   | **URI**                                                                                                     | **URL (subset of URI)**                                                                 | **URN (subset of URI)**                                                          |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **Meaning**                  | Generic identifier for a resource (can be a name, a location, or both).                                     | Identifier that **tells you where and how** to access a resource.                       | Identifier that gives a **unique name**, but not the location or access method.  |
+| **Analogy**                  | “Something that points to a product.”                                                                       | “The product’s full web address you can visit.”                                         | “The product’s catalog number / SKU.”                                            |
+| **E-commerce Example**       | Any of these could be a URI:<br>• `https://amazon.com/product/12345` (location)<br>• `urn:sku:12345` (name) | `https://www.amazon.com/dp/B0CXYZ1234?ref=abc`<br>(takes you to the exact product page) | `urn:asin:B0CXYZ1234`<br>(Amazon Standard Identification Number for the product) |
+| **Tells you how to access?** | Not always                                                                                                  | Yes (protocol like `https`, domain, path)                                               | No (just a name, no access method)                                               |
+| **Used in real life for**    | Any resource reference                                                                                      | Visiting product pages, APIs, images, checkout links                                    | Internal product catalogs, ISBNs, SKUs, ASINs                                    |
+
+## More REST Recommendations
+
+## Things to explore
+
+- More of REST recommendations
+- URL encoding and decoding
+- When to use query params, body params and URL params.
+- What is request body?
 
 ## Important Resource And Documentations
 
