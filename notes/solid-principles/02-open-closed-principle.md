@@ -235,3 +235,7 @@ public class Main {
 | Extensibility   | Poor                | Excellent                            |
 | Enum usage      | Controls logic      | Used as identifier                   |
 | Patterns used   | None                | Strategy + Registry                  |
+
+- OCP is not about removing enums or switches entirely.
+- It’s about designing systems so that new behavior can be added without modifying existing code.
+- A registry (map) helps by turning “decision code” into “data configuration,” letting polymorphism do the rest.
