@@ -1,6 +1,10 @@
 # Single Responsibility Principle
 
 - As per SRP, the class should have one, and only one reason to change.
+- It not only applies to a class but also to a method/function and modules.
+- The "responsibility" in SRP is the reason to change the code, not neccessarily perform a single task.
+- A class can perform multiple related actions as long as they all serve one clear purpose.
+- If two methods change for completely different reasons (e.g., business rule vs. display rule), SRP is broken.
 
 ## How to detect if this principle is being violated?
 
@@ -99,7 +103,15 @@ public class EmployeePerformanceEvaluator {
 
 - The only reason to change the `EmployeePerformanceEvaluator` class is when the logic to evaluate the performance changes.
 
-## How to detect if SRP is not fulfilled?
+## Signs of SRP being violated
 
-- Monster functions or a class (A very big function/ class doing a lot of things)
-- Especially in the controller layer, lot of logic is added which creates monster functions.
+1. The class name is vague. (`Manager`, `Helper`, `Processor`)
+2. You can't summarize what the class does in one short sentence without using `and`.
+3. It depends on too many external modules (high coupling).
+4. Different developers or teams needs to modify it for different purposes.
+
+## Benefits of SRP
+
+1. It ensures high cohesion (each class focuses on one thing).
+2. It reduces coupling (classes don’t depend on multiple, unrelated reasons to change).
+3. It also makes it easier to follow other SOLID principles like OCP and DIP.
